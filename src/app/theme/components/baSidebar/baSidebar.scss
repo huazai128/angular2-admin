@@ -14,6 +14,7 @@ $angle-right: "\f101";
   background-color: $sidebar;
   height: 100%;
   position: fixed;
+
 }
 
 .al-sidebar-list {
@@ -107,12 +108,12 @@ a.al-sidebar-list-link {
     padding: 0;
     text-align: center;
     color: $sidebar-text;
-    transition: transform 0.2s linear;
+    transition: transform 0.5s linear;
   }
 }
 
 .slimScrollBar, .slimScrollRail {
-  border-radius: 0px !important;
+  border-radius: 0 !important;
   width: $sidebar-scroll-width !important;
   left: $sidebar-width - $sidebar-scroll-width;
 }
@@ -189,11 +190,11 @@ a.al-sidebar-list-link {
 @mixin sidebar-collapsed() {
   .al-sidebar {
     width: 52px;
-
+    transition: width 0.2s ease-in-out;
+    -webkit-transition: width 0.2s ease-in-out;
     .fa-angle-down, .fa-angle-up {
       opacity: 0;
     }
-
     .al-sidebar-sublist {
       position: absolute;
       top: -1px;
@@ -269,27 +270,31 @@ a.al-sidebar-list-link {
     display: none!important;
   }
 }
-
+//最小宽度1200px
 @media (min-width: 1200px) {
   .menu-collapsed {
     @include layout-collapsed();
   }
 }
 
+//最大宽度1200px
+@media (max-width: 1200px) {
+  @include sidebar-collapsed();
+}
+
+//宽度在1200px至500px
+@media (max-width: 1200px) and (min-width: $resXS) {
+  @include layout-collapsed();
+}
+
+//最小宽度501px
 @media (min-width: $resXS + 1) {
   .menu-collapsed {
     @include sidebar-collapsed();
   }
 }
 
-@media (max-width: 1200px) and (min-width: $resXS) {
-  @include layout-collapsed();
-}
-
-@media (max-width: 1200px) {
-  @include sidebar-overlap();
-}
-
+//最大宽度500
 @media (max-width: $resXS) {
   .menu-collapsed {
     @include sidebar-hidden();

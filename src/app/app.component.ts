@@ -1,17 +1,15 @@
 import { Component, ViewContainerRef } from '@angular/core';
 
 import { GlobalState } from './global.state';
-import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
 import { BaThemeConfig } from './theme/theme.config';
-import { layoutPaths } from './theme/theme.constants';
 
-import 'style-loader!./app.scss';
+import { ProloaderService,ThemeSpinner,ImageLoaderService } from "./theme/services";
+import { layoutPaths } from "./theme/theme.constants";
+
+import 'style-loader!./app.scss';  //样式的引入
 import 'style-loader!./theme/initial.scss';
 
-/*
- * App Component
- * Top Level Component
- */
+
 @Component({
   selector: 'app',
   template: `
@@ -21,35 +19,33 @@ import 'style-loader!./theme/initial.scss';
     </main>
   `
 })
+
 export class App {
 
   isMenuCollapsed: boolean = false;
 
   constructor(private _state: GlobalState,
-              private _imageLoader: BaImageLoaderService,
-              private _spinner: BaThemeSpinner,
+              private _spinner:ThemeSpinner,
+              private imageLoader:ImageLoaderService,
               private viewContainerRef: ViewContainerRef,
               private themeConfig: BaThemeConfig) {
 
-    themeConfig.config();
-
-    this._loadImages();
-
-    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
+    this.themeConfig.config();
+    this._loaderImage();
+    //Subject对象可以向多方推送信息;
+    this._state.subscribe('menu.isCollapsed', (isCollapsed) => { //这个是浏览器小于1200触发
       this.isMenuCollapsed = isCollapsed;
     });
   }
 
-  public ngAfterViewInit(): void {
-    // hide spinner once all loaders are completed
-    BaThemePreloader.load().then((values) => {
-      this._spinner.hide();
-    });
+  public ngAfterViewInit():void{ //在当前视图初始化之前调用
+    ProloaderService.load().then((values) => {
+     this._spinner.hide();
+    })
   }
 
-  private _loadImages(): void {
-    // register some loaders
-    BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
+  private _loaderImage():void{
+    ProloaderService.registerLoader(this.imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'))
   }
 
 }

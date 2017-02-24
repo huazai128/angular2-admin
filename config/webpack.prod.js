@@ -36,7 +36,7 @@ module.exports = function (env) {
      * See: http://webpack.github.io/docs/configuration.html#devtool
      * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
      */
-    devtool: 'source-map',
+    devtool: 'cheap-module-eval-source-map',
 
     /**
      * Options affecting the output of the compilation.

@@ -1,1 +1,1 @@
-export * from './baMenuItem.component';
+export * from "./baMenuItem.component";

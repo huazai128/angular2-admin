@@ -1,26 +1,11 @@
-@import '../../sass/conf/conf';
+//head：管理提示
+@import "../../sass/conf/conf";
 
-/* msg center */
-@-webkit-keyframes pulsate {
-  30% {
-    -webkit-transform: scale(0.1, 0.1);
-    opacity: 0.0;
-  }
-  35% {
-    opacity: 1.0;
-  }
-  40% {
-    -webkit-transform: scale(1.2, 1.2);
-    opacity: 0.0;
-  }
-}
-
-.al-msg-center {
-  float: right;
+.al-msg-center{
+  float:right;
   padding: 0;
   list-style: none;
   margin: 13px 47px 0 0;
-
   li {
     list-style: none;
     float: left;
@@ -56,8 +41,8 @@
         height: 40px;
         width: 40px;
         position: absolute;
-        top: -18px;
-        right: -27px;
+        top: -14px;
+        right: -20px;
         animation: pulsate 8s ease-out;
         animation-iteration-count: infinite;
         opacity: 0.0
@@ -89,70 +74,58 @@
   }
 }
 
-@media (max-width: $resXXS) {
-  .al-msg-center {
-    margin-right: 20px;
-    li {
-      margin-left: 20px;
-      &:first-child {
-        margin-left: 0;
-      }
-    }
-  }
-}
-
-.msg-block-header {
+.msg-block-header{
   display: inline-block;
   padding: 0;
   font-size: 13px;
   margin: 0 0 0 6px;
 }
 
-.top-dropdown-menu {
+.top-dropdown-menu{
   width: 316px;
   left: auto;
   right: -47px;
   top: 26px;
-  @include scrollbars(.4em, rgba(0,0,0,0.5), #fff);
-  .header {
+  @include scrollbars(0.2pm,rgba(0,0,0,0.5),#fff);
+  .header{
     padding: 10px 12px;
     border-bottom: 1px solid $default;
     font-size: 12px;
-    strong {
-      float: left;
+    strong{
+      float:left;
       color: $dropdown-text;
     }
-    & > a {
+    &>a{
       float: right;
       margin-left: 12px;
       text-decoration: none;
-      &:hover {
+      &:hover{
         color: $dropdown-text;
       }
     }
   }
-  .msg-list {
+  .msg-list{
     max-height: 296px;
     overflow: scroll;
     overflow-x: hidden;
-    & > a {
-      border-top: 1px solid $default;
+    & > a{
+      border-top: 1px slod $default;
       padding: 10px 12px;
       display: block;
       text-decoration: none;
       color: $dropdown-text;
       font-size: 12px;
-      &:first-child {
-        border-top: none;
+      &:first-child{
+        border-top: 0;
       }
-      .img-area {
+      .img-area{
         float: left;
         width: 36px;
-        img {
+        img{
           width: 36px;
           height: 36px;
           &.photo-msg-item{
-            border-radius: 18px;
+            border-radius: 50%;
           }
         }
         & > div {
@@ -161,19 +134,19 @@
           border-radius: 4px;
           font-size: 24px;
           text-align: center;
-          &.comments {
+          &.comments{
             color: $warning;
           }
-          &.orders {
+          &.orders{
             color: $warning;
           }
-          i {
+          i{
             width: 36px;
             line-height: 36px;
           }
         }
       }
-      .msg-area {
+      .msg-area{
         float: right;
         width: 230px;
         div {
@@ -181,31 +154,32 @@
           overflow: hidden;
           text-overflow: ellipsis;
         }
-        span {
+        span{
           font-style: italic;
           text-align: right;
           display: block;
           font-size: 11px;
         }
       }
-      &:hover {
+      &:hover{
         background: #E2F0FF;
       }
     }
   }
-  & > a {
+
+  & > a{
     border-top: 1px solid $default;
     display: block;
     text-align: center;
     padding: 10px;
     font-size: 12px;
     text-decoration: none;
-    &:hover {
+    &:hover{
       color: $dropdown-text;
     }
   }
 
-  &.profile-dropdown {
+  &.profile-dropdown{
     width: 145px;
     top: 55px;
     right: -25px;
@@ -241,7 +215,7 @@
     border-bottom-color: rgba(0, 0, 0, .15);
     &:after {
       top: -9px;
-      left: 0px;
+      left: 0;
       margin-left: -10px;
       content: " ";
       position: absolute;
@@ -254,6 +228,8 @@
   }
 }
 
+
+
 @media (max-width: 415px) {
   .top-dropdown-menu {
     right: -81px;
@@ -262,3 +238,48 @@
     }
   }
 }
+
+
+
+
+@keyframes pulsate {
+  30%{
+    -webkit-transform: scale(0.1,0.1);
+    opacity: 0;
+  }
+  35%{
+    opacity: 1.0;
+  }
+  40%{
+    -webkit-transform: scale(1.2,1.2);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pulsate {
+  30%{
+    -webkit-transform: scale(0.1,0.1);
+    opacity: 0;
+  }
+  35%{
+    opacity: 1.0;
+  }
+  40%{
+    -webkit-transform: scale(1.2,1.2);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: $resXXS){
+  .al-msg-center{
+    margin-right: 20px;
+    li{
+      margin-left: 20px;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+
+

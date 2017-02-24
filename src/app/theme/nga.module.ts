@@ -12,96 +12,51 @@ import {
   BaThemeConfigProvider
 } from './theme.configProvider';
 
+
 import {
-  BaAmChart,
-  BaBackTop,
-  BaCard,
-  BaChartistChart,
-  BaCheckbox,
-  BaContentTop,
-  BaFullCalendar,
-  BaMenuItem,
+  ThemeSpinner,
+  ProloaderService,
+  ImageLoaderService,
+  BaMenuService
+} from "./services";  //数据服务
+
+import {
+  BaSidebar,
   BaMenu,
-  BaMsgCenter,
-  BaMultiCheckbox,
-  BaPageTop,
-  BaPictureUploader,
-  BaSidebar
-} from './components';
-
-import { BaCardBlur } from './components/baCard/baCardBlur.directive';
-
-import {
-  BaScrollPosition,
-  BaSlimScroll,
-  BaThemeRun
-} from './directives';
-
-import {
-  BaAppPicturePipe,
-  BaKameleonPicturePipe,
-  BaProfilePicturePipe
-} from './pipes';
-
-import {
-  BaImageLoaderService,
-  BaMenuService,
-  BaThemePreloader,
-  BaThemeSpinner
-} from './services';
-
-import {
-  EmailValidator,
-  EqualPasswordsValidator
-} from './validators';
-
-const NGA_COMPONENTS = [
-  BaAmChart,
-  BaBackTop,
-  BaCard,
-  BaChartistChart,
-  BaCheckbox,
-  BaContentTop,
-  BaFullCalendar,
   BaMenuItem,
-  BaMenu,
-  BaMsgCenter,
-  BaMultiCheckbox,
   BaPageTop,
-  BaPictureUploader,
-  BaSidebar
-];
+  BaMsgCenter
+} from "./components"    //组件
 
-const NGA_DIRECTIVES = [
-  BaScrollPosition,
-  BaSlimScroll,
-  BaThemeRun,
-  BaCardBlur
-];
+import{
+  BaSlimScroll
+} from "./directives"   //指令
 
-const NGA_PIPES = [
-  BaAppPicturePipe,
-  BaKameleonPicturePipe,
-  BaProfilePicturePipe
-];
 
-const NGA_SERVICES = [
-  BaImageLoaderService,
-  BaThemePreloader,
-  BaThemeSpinner,
+
+const NGA_SERVICES = [  //服务
+  ProloaderService,
+  ThemeSpinner,
+  ImageLoaderService,
   BaMenuService
 ];
 
-const NGA_VALIDATORS = [
-  EmailValidator,
-  EqualPasswordsValidator
+const NGA_COMPONENT = [  //组件
+  BaSidebar,
+  BaMenu,
+  BaMenuItem,
+  BaPageTop,
+  BaMsgCenter
 ];
+
+const NGA_DIRECTIVES = [  //指令
+  BaSlimScroll
+]
 
 @NgModule({
   declarations: [
-    ...NGA_PIPES,
-    ...NGA_DIRECTIVES,
-    ...NGA_COMPONENTS
+    ...NGA_COMPONENT,
+    ...NGA_DIRECTIVES
   ],
   imports: [
     CommonModule,
@@ -111,20 +66,18 @@ const NGA_VALIDATORS = [
     NgUploaderModule,
   ],
   exports: [
-    ...NGA_PIPES,
-    ...NGA_DIRECTIVES,
-    ...NGA_COMPONENTS
+    ...NGA_COMPONENT,
+    ...NGA_DIRECTIVES
   ]
 })
 export class NgaModule {
   static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders> {
+    return <ModuleWithProviders> { //模板提供者
       ngModule: NgaModule,
-      providers: [
+      providers: [  //数据服务注入
         BaThemeConfigProvider,
         BaThemeConfig,
-        ...NGA_VALIDATORS,
-        ...NGA_SERVICES
+        ...NGA_SERVICES //使用扩展运算符，本身含有迭代器
       ],
     };
   }

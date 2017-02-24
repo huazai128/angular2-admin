@@ -6,29 +6,32 @@
 
 Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
+### 安装出现的问题
+
+<p>安装ngc：npm install @angular/compiler-cli @angular/platform-server --save</p>
+<p>安装amcharts3和ammap3命令:npm install amcharts/amcharts3和npm install amcharts/ammap必须在node配置好git环境(在node中输入git命令：没有显现git不是内部命令则正常)</p>
+<p>bootstrap-loader安转引用会报错：配置详情：https://github.com/shakacode/bootstrap-loader,并配置.bootstraprc文件，并进行修
+改，bootstrap：4.0.0-alpha.6不支持当前.bootstraprc配置；bootstrap-load导入会报错；
+<span>bootstart:4.0.0-alpha.6<span>
+    <span>不存在_animations 和_tags ;修改.bootstraprc文件也会报错，<span>
+    <a href="https://github.com/shakacode/bootstrap-loader/issues/236">https://github.com/shakacode/bootstrap-loader/issues/236 </a>
+</p>
+    
+<p>解决node install.js 安装出错的问题，在项目中增加.npmrc配置文件,在文件中添加一下内容:
+
+    registry=https://registry.npm.taobao.org
+    sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+    phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs
+    ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+<p>
+<p>node-pre报错:不支持python3.0以上的版本，版本控制在2.5至 3.0  ;
+解决方法：<a href="http://www.cnblogs.com/haochuang/p/5688093.html">http://www.cnblogs.com/haochuang/p/5688093.html</a></p>
+
 ### Demo
 
 <a target="_blank" href="http://akveo.com/ng2-admin/"><img src="http://i.imgur.com/QK9AzHj.jpg" width="600" alt="Sky Blue"/></a>
 
 <a target="_blank" href="http://akveo.com/ng2-admin/">Live Demo</a>
-
-## Angular 1.x version
-Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
- 
-## Documentation
-Installation, customization and other useful articles: https://akveo.github.io/ng2-admin/
-
-## Based on
-Angular 2, Bootstrap 4, Webpack and lots of awesome modules and plugins
-
-## How can I support developers?
-- Star our GitHub repo :star:
-- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow us on [Twitter](https://twitter.com/akveo_inc) :feet:
-- Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
-
-## Can I hire you guys?
-Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a note to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
 
 ## Features
 * TypeScript

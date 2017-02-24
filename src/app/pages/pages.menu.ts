@@ -1,4 +1,9 @@
-export const PAGES_MENU = [
+/**
+ * @type {[{path: string; children: [{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}},{path: string; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: [string]; data: {menu: {title: string}}},{path: [string]; data: {menu: {title: string}}}]},{path: string; data: {menu: {title: string; icon: string; selected: boolean; expanded: boolean; order: number}}; children: [{path: string; data: {menu: {title: string; url: string}}},{path: string; data: {menu: {title: string; url: string}}; children: [{path: string; data: {menu: {title: string; url: string}}}]}]},{path: string; data: {menu: {title: string; url: string; icon: string; order: number; target: string}}}]}]}
+ * 左侧导航数据路由,baMenu.service:用于处理PAGES_MENU数据；
+ * data:用于传递数据
+ */
+export const PAGES_MENU = [  //路由数据
   {
     path: 'pages',
     children: [
@@ -6,11 +11,11 @@ export const PAGES_MENU = [
         path: 'dashboard',
         data: {
           menu: {
-            title: 'Dashboard',
-            icon: 'ion-android-home',
-            selected: false,
-            expanded: false,
-            order: 0
+            title: 'Dashboard',    //标题
+            icon: 'ion-android-home',//icon
+            selected: false,  //选择当前路由，默认为false
+            expanded: false,  //如果有子路由是否展开  默认为false
+            order: 0  //
           }
         }
       },
@@ -327,4 +332,4 @@ export const PAGES_MENU = [
       }
     ]
   }
-];
+]

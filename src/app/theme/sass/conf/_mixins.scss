@@ -17,17 +17,17 @@
 }
 
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
-  ::-webkit-scrollbar {
+  ::-webkit-scrollbar { //滚动条的宽高
     width: $size;
     height: $size;
   }
 
-  ::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {  //滚动条按钮演示
     background: $foreground-color;
     cursor: pointer;
   }
 
-  ::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {  //滚动条轨道样式
     background: $background-color;
   }
 

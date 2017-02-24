@@ -1,31 +1,21 @@
-import {Component} from '@angular/core';
+import { Component } from "@angular/core";
 
-import {GlobalState} from '../../../global.state';
+import { GlobalState } from "../../../global.state";
 
-import 'style-loader!./baPageTop.scss';
+import "style-loader!./baPageTops.scss"
 
 @Component({
-  selector: 'ba-page-top',
-  templateUrl: './baPageTop.html',
+  selector:"ba-page-top",
+  templateUrl:"./baPageTop.html",
+  // styles:[`
+  //
+  //       body{
+  //           color: #fff4b0;
+  //       }
+  //    `]
 })
-export class BaPageTop {
 
-  public isScrolled:boolean = false;
-  public isMenuCollapsed:boolean = false;
+export class BaPageTop{
 
-  constructor(private _state:GlobalState) {
-    this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
-      this.isMenuCollapsed = isCollapsed;
-    });
-  }
 
-  public toggleMenu() {
-    this.isMenuCollapsed = !this.isMenuCollapsed;
-    this._state.notifyDataChanged('menu.isCollapsed', this.isMenuCollapsed);
-    return false;
-  }
-
-  public scrolledChanged(isScrolled) {
-    this.isScrolled = isScrolled;
-  }
 }

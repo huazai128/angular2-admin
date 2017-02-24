@@ -1,1 +1,1 @@
-export * from './baMenu.service';
+export * from "./baMenu.service"
