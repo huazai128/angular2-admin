@@ -14,15 +14,16 @@
         <a href="">Settings</a>
       </div>
       <div class="msg-list">
-        <a href=""  class="clearfix">
-          <div class="img-area"><img src=""></div>
+        <a href=""  class="clearfix" *ngFor="let nt of notifications">
+          <div class="img-area"><img [ngClass]="{'photo-msg-item' :!nt.image }" src="{{(nt.image) || (nt.name | baProfilePicture)}}"></div>
           <div class="msg-area">
-            <div>keke</div>
-            <span>1 min</span>
+            <div>{{nt.text}}</div>
+            <span>{{nt.time}}</span>
           </div>
         </a>
       </div>
       <a href="">See all notifications</a>
+
 
     </div>
   </li>
@@ -42,11 +43,11 @@
         <a href>Settings</a>
       </div>
       <div class="msg-list">
-        <a href class="clearfix">
-          <div class="img-area"><img src=""></div>
+        <a href class="clearfix" *ngFor="let msg of messages">
+          <div class="img-area"><img [ngClass]="{'photo-msg-item':!msg.image}" src="{{(msg.image) || (msg.name| baProfilePicture)}}"></div>
           <div class="msg-area">
-            <div>huazai</div>
-            <span>1 min</span>
+            <div>{{msg.text}}</div>
+            <span>{{msg.time}}</span>
           </div>
         </a>
       </div>

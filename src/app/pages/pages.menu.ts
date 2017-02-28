@@ -245,36 +245,36 @@ export const PAGES_MENU = [  //路由数据
           }
         ]
       },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'Pages',
-            icon: 'ion-document',
-            selected: false,
-            expanded: false,
-            order: 650,
-          }
-        },
-        children: [
-          {
-            path: ['/login'],
-            data: {
-              menu: {
-                title: 'Login'
-              }
-            }
-          },
-          {
-            path: ['/register'],
-            data: {
-              menu: {
-                title: 'Register'
-              }
-            }
-          }
-        ]
-      },
+      // {
+      //   path: '',
+      //   data: {
+      //     menu: {
+      //       title: 'Pages',
+      //       icon: 'ion-document',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 650,
+      //     }
+      //   },
+      //   children: [
+      //     {
+      //       path: ['/login'],
+      //       data: {
+      //         menu: {
+      //           title: 'Login'
+      //         }
+      //       }
+      //     },
+      //     {
+      //       path: ['/register'],
+      //       data: {
+      //         menu: {
+      //           title: 'Register'
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
       {
         path: '',
         data: {
@@ -283,7 +283,7 @@ export const PAGES_MENU = [  //路由数据
             icon: 'ion-ios-more',
             selected: false,
             expanded: false,
-            order: 700,
+            order: 650,
           }
         },
         children: [
@@ -325,7 +325,7 @@ export const PAGES_MENU = [  //路由数据
             title: 'External Link',
             url: 'http://akveo.com',
             icon: 'ion-android-exit',
-            order: 800,
+            order: 700,
             target: '_blank'
           }
         }

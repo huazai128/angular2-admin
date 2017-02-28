@@ -33,6 +33,11 @@ import{
 } from "./directives"   //指令
 
 
+import {
+  BaProfilePicturePipe
+} from "./pipes";       //管道
+
+
 
 const NGA_SERVICES = [  //服务
   ProloaderService,
@@ -51,12 +56,18 @@ const NGA_COMPONENT = [  //组件
 
 const NGA_DIRECTIVES = [  //指令
   BaSlimScroll
+];
+
+
+const NGA_PIPES = [       //管道
+  BaProfilePicturePipe
 ]
 
 @NgModule({
   declarations: [
     ...NGA_COMPONENT,
-    ...NGA_DIRECTIVES
+    ...NGA_DIRECTIVES,
+    ...NGA_PIPES
   ],
   imports: [
     CommonModule,
@@ -67,11 +78,14 @@ const NGA_DIRECTIVES = [  //指令
   ],
   exports: [
     ...NGA_COMPONENT,
-    ...NGA_DIRECTIVES
+    ...NGA_DIRECTIVES,
+    ...NGA_PIPES
   ]
 })
+
+
 export class NgaModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {  //静态类  直接调用;不能通过constructor
     return <ModuleWithProviders> { //模板提供者
       ngModule: NgaModule,
       providers: [  //数据服务注入
