@@ -1,0 +1,51 @@
+<div class="auth-main">
+  <div class="auth-block">
+    <h1>注册</h1>
+    <a href="/login" class="auth-link">已经有账号？登录去！</a>
+    <form [formGroup]="form" (ngSubmit)="register(form.value)" class="form-horizontal">
+
+      <div class="form-group row" [ngClass]="{'has-error':(!name.valid && name.touched),'has-success':(name.valid && name-touched)}">
+        <label for="name" class="col-sm-2">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [formControl]="name" id="name" (change)="validName(name.value)" placeholder="Name" required>
+        </div>
+      </div>
+
+      <div class="form-group row" [ngClass]="{'has-error':(!email.valid && email.touched),'has-success':(email.valid && email.touched)}">
+        <label class="col-sm-2" for="email">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" [formControl]="email" id="email" (change)="validEmail(email.value)" placeholder="Email" required>
+        </div>
+      </div>
+
+      <div class="form-group row"  [ngClass]="{'has-error':(!password.valid && password.touched),'has-success':(password.valid && password.touched)}">
+        <label for="password" class="col-sm-2">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" [formControl]="password" id="password" placeholder="Password" required>
+        </div>
+      </div>
+
+      <div class="form-group row"  [ngClass]="{'has-error':(!rePassword.valid && rePassword.touched),'has-success':(rePassword.valid && rePassword.touched)}">
+        <label for="rePassword" class="col-sm-2">Repeat</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" [formControl]="rePassword" id="rePassword" placeholder="Repeat Password" required>
+          <span *ngIf="!passwords.valid && (password.touched || rePassword.touched)" class="help-block sub-little-text">输入的密码不一致！</span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-2">
+          <button [disabled]="!form.valid" class="btn btn-default btn-auth">注册</button>
+        </div>
+      </div>
+    </form>
+    <div class="auth-sep"><span><span>or Sign in with one click</span></span></div>
+    <div class="al-share-auth">
+      <ul class="al-share clearfix">
+        <li><i class="fa fa-weixin" title="Share on WeiXin"></i></li>
+        <li><i class="fa fa-qq" title="Share on QQ"></i></li>
+        <li><i class="fa fa-google" title="Share on Google Plus"></i></li>
+      </ul>
+    </div>
+  </div>
+</div>

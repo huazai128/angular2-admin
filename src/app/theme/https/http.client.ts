@@ -6,6 +6,8 @@ import { Observable } from "rxjs/Observable"; //
 import 'rxjs/add/operator/catch';  //catch:用于捕获异常
 //Operator:是rxjs操作符，提供filter、map等操作
 
+
+//数据不要处理的就可以使用一下
 //用于处理交互请求;使用RESTful风格
 @Injectable()
 export class HttpClient{

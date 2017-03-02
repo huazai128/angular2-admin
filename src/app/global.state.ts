@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject }    from 'rxjs/Subject';  //相当于一个事件发射器，是唯一能够向多个Observer广播值( value )的唯一手段，有点类似于EventListen；向他订阅过得地方发送数据；
-/**
- * 状态服务
- */
+
+
 @Injectable()
 export class GlobalState {
 
@@ -18,7 +17,7 @@ export class GlobalState {
   }
 
 
-  //用于数据变化通知
+  //用于数据变化通知;子这里添加更新的数据加+缓存
   notifyDataChanged(event, value) {
 
     let current = this._data[event];
@@ -32,7 +31,12 @@ export class GlobalState {
     }
   }
 
-  //用于订阅,所有的订阅的地方输出
+  //清除数据
+  clearData(){
+
+  }
+
+  //用于订阅,所有的订阅的地方推送数据
   subscribe(event: string, callback: Function) {
     let subscribers = this._subscriptions.get(event) || [];//具有Map的特性可以使用get、set方法
     subscribers.push(callback);

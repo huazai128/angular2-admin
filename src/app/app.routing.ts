@@ -5,4 +5,4 @@ export const routes: Routes = [
   { path: '', redirectTo:"pages", pathMatch:"full"},
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes/*, { useHash: true }*/);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { useHash: false });

@@ -25,7 +25,9 @@ import {
   BaMenu,
   BaMenuItem,
   BaPageTop,
-  BaMsgCenter
+  BaMsgCenter,
+  BaContentTop,
+  BaCard
 } from "./components"    //组件
 
 import{
@@ -51,7 +53,9 @@ const NGA_COMPONENT = [  //组件
   BaMenu,
   BaMenuItem,
   BaPageTop,
-  BaMsgCenter
+  BaMsgCenter,
+  BaContentTop,
+  BaCard
 ];
 
 const NGA_DIRECTIVES = [  //指令

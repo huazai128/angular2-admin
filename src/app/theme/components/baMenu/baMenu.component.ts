@@ -74,6 +74,7 @@ export class BaMenu{
     console.log("点击了");
     if(this.menuItems){
       this.menuItems = this._service.selectMenuItem(this.menuItems);
+      //监听路由的改变并向各个订阅的地方推送当前路由数据
       this._state.notifyDataChanged("menu.activeLink",this._service.getCurrentItem())
     }
   }
