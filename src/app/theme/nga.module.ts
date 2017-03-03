@@ -33,6 +33,7 @@ import {
 import{
   BaSlimScroll
 } from "./directives"   //指令
+import { BaCardBlur } from "./components/baCard/baCardBlur.directive"
 
 
 import {
@@ -59,7 +60,8 @@ const NGA_COMPONENT = [  //组件
 ];
 
 const NGA_DIRECTIVES = [  //指令
-  BaSlimScroll
+  BaSlimScroll,
+  BaCardBlur
 ];
 
 

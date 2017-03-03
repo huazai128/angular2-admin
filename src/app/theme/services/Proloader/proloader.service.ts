@@ -5,7 +5,9 @@ export class ProloaderService{ //静态成员只能实例调用
 
   private static _loaders:Array<Promise<any>> = [];//static：静态成员变量是多个对象(也就是new)共享这个变量，且都可以改变它的值
 
+  //图片加载情况
   public static registerLoader(method:Promise<any>):void{
+    //console.log(method);
     this._loaders.push(method)
   }
 

@@ -71,7 +71,7 @@ export class BaMenu{
    * 点击当前路由以及初始化调用
    */
   public selectMenuAndNotify():void{
-    console.log("点击了");
+    //console.log("点击了");
     if(this.menuItems){
       this.menuItems = this._service.selectMenuItem(this.menuItems);
       //监听路由的改变并向各个订阅的地方推送当前路由数据
@@ -81,13 +81,13 @@ export class BaMenu{
 
   //组件的销毁;什么时候销毁
   public ngOnDestroy():void{ //指令的销毁；当Angular每次销毁指令/组件之前调用并清扫,+
-    console.log("销毁了");
+    //console.log("销毁了");
     this._onRouteChange.unsubscribe(); //unsubscribe:用于资源的终止
     this._menuItemsSub.unsubscribe();  //离开组件时，销毁数据
   }
 
   public hoverItem($event):void{ //自定义事件，触发；这个事件必须添加到各个路由中才能获取每一个路由元素的高度
-    console.log($event);//查看这里所包含的信息
+    //console.log($event);//查看这里所包含的信息
     this.showHoverElem = true; //当鼠标滑到导航是，sidebar-hover-elem显示
     this.hoverElemHeight = $event.currentTarget.clientHeight;//鼠标当前元素下的高度
     this.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - 66;  //当前元素距离距离左顶点的位置的高度

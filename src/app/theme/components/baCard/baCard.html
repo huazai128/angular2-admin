@@ -1,9 +1,8 @@
-<div class="animated fadeIn card {{cardType}} {{baCardClass || ''}}" zoom-in>
-  <div class="card-header clearfix">
+<div baCardBlur class="animated fadeIn card {{cardType}} {{baCardClass || ''}}" zoom-in>
+  <div *ngIf="title" class="card-header clearfix">
     <h3 class="card-title">{{title}}</h3>
   </div>
   <div class="card-body">
-    <!-- card组件,显示指定于组件中的内容 也就是pieChart中自定义标签里面的内容放入这里显示 -->
     <ng-content></ng-content>
   </div>
 </div>

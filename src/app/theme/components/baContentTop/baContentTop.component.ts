@@ -13,7 +13,7 @@ export class BaContentTop{
   public activePageTitle:string;
   constructor(private state:GlobalState){
     this.state.subscribe("menu.activeLink",(value) => {
-      console.log(value)
+      //console.log(value)
       if(value){
         this.activePageTitle = value.title;
       }

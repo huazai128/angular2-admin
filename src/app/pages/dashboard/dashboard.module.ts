@@ -20,6 +20,8 @@ import { PieChart } from "./pieChart"
     PieChart
   ]
 })
+
+
 export class DashboardModule{
 
 }

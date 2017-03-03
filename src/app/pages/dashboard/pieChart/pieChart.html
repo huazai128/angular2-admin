@@ -1,15 +1,15 @@
 <div class="row pie-charts">
-  <ba-card class="pie-chart-item-container col-xlg-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+  <ba-card *ngFor="let chart of charts" class="pie-chart-item-container col-xlg-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
     <!-- 自定义标签中嵌套内容是没有办法显示只能通过  ng-content显示 -->
     <div class="pie-chart-item">
-      <div class="chart" data-percent="60">
+      <div class="chart" [attr.data-rel]="chart.color" data-percent="60">
         <span class="percent"></span>
       </div>
       <div class="description">
-        <div>详情</div>
-        <div class="description-stats">non</div>
+        <div>{{ chart.description }}</div>
+        <div class="description-stats">{{ chart.stats }}</div>
       </div>
-      <i class="chart-icon"></i>
+      <i class="chart-icon i-{{ chart.icon }}"></i>
     </div>
   </ba-card>
 </div>
