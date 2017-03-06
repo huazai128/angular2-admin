@@ -4,9 +4,12 @@ import { FormsModule } from "@angular/forms";
 import { routing } from "./dashboard.router";
 import { NgaModule } from "../../theme/nga.module";  //可以看做公用module
 
-//组件
+//组件和数据服务
 import { DashBoards } from "./dashboard.component";
-import { PieChart } from "./pieChart"
+import { PieChart,PieChartService } from "./pieChart";
+import { TrafficChart,TrafficChartSerivce} from "./trafficChart";
+import { UserMap,UserMapService } from "./userMap"
+
 
 @NgModule({
   imports:[
@@ -17,7 +20,14 @@ import { PieChart } from "./pieChart"
   ],
   declarations:[
     DashBoards,
-    PieChart
+    PieChart,
+    TrafficChart,
+    UserMap
+  ],
+  providers:[
+    PieChartService,
+    TrafficChartSerivce,
+    UserMapService
   ]
 })
 

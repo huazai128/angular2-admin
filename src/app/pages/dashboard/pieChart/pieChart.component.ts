@@ -6,8 +6,7 @@ import "style-loader!./pieChart.scss";
 
 @Component({
   selector:"pie-chart",
-  templateUrl:"./pieChart.html",
-  providers:[PieChartService]
+  templateUrl:"./pieChart.html"
 })
 
 export class PieChart{
@@ -34,8 +33,8 @@ export class PieChart{
         easing:"easeOutBounce",
         onStep:function(from,to,percent){  //在提供当前值的动画期间调用的回调函数
           //console.log(percent);
-          console.log($(this));//
-          $(this).find(".percent").text(Math.round(percent)); //round：四舍五入
+          //console.log($(this));//此时this指向但钱函数作用域
+          $(this.el).find(".percent").text(Math.round(percent)); //round：四舍五入
         },
         barColor: $(this).attr("data-rel"),  //占有率颜色 false:禁止渲染
         trackColor:"rgba(0,0,0,0)",  //空白区颜色 ，false:禁止渲染
