@@ -29,6 +29,7 @@ export class PieChart{
     //each():规定为每个匹配元素规定运行的函数。
     $(".chart").each(function(){
       let $self  = $(this);
+      //
       $self.easyPieChart({
         easing:"easeOutBounce",
         onStep:function(from,to,percent){  //在提供当前值的动画期间调用的回调函数

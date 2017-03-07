@@ -9,6 +9,8 @@ import { DashBoards } from "./dashboard.component";
 import { PieChart,PieChartService } from "./pieChart";
 import { TrafficChart,TrafficChartSerivce} from "./trafficChart";
 import { UserMap,UserMapService } from "./userMap"
+import { LineChart,LineChartService } from "./lineChart";
+import { PopularApp } from "./popularApp"
 
 
 @NgModule({
@@ -22,12 +24,15 @@ import { UserMap,UserMapService } from "./userMap"
     DashBoards,
     PieChart,
     TrafficChart,
-    UserMap
+    UserMap,
+    LineChart,
+    PopularApp
   ],
   providers:[
     PieChartService,
     TrafficChartSerivce,
-    UserMapService
+    UserMapService,
+    LineChartService,
   ]
 })
 

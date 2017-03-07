@@ -18,12 +18,12 @@ import "style-loader!./baAmChart.scss";
 
 export class BaAmChart{
   @Input() public baAmChartClass:string;  //获取父类数据
-  @Input() public baAmChartConfiguration:Object;
+  @Input() public baAmChartConfiguration:Object;  //获取父组件传递过来的数据
   @Output() onChartReady = new EventEmitter<any>(); //输出事件
 
   @ViewChild("baAmChart") public _selector:ElementRef; //ViewChild：用于父组件需要读取子组件的属性和方法的时候
   constructor(private _baChartService:BaAmChartService){
-    console.log(this.baAmChartConfiguration);
+    //console.log(this.baAmChartConfiguration);
     this._loadChartsLib()
   }
 
@@ -33,6 +33,7 @@ export class BaAmChart{
 
   ngAfterViewInit(){ //试图初始化之后调用
     //创建一个map；makeChart(el,data):
+    //console.log(this._selector.nativeElement);
     let chart = AmCharts.makeChart(this._selector.nativeElement, this.baAmChartConfiguration);
     this.onChartReady.emit(chart);
   }

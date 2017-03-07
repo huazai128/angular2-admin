@@ -38,9 +38,9 @@ import { BaCardBlur } from "./components/baCard/baCardBlur.directive"
 
 
 import {
-  BaProfilePicturePipe
+  BaProfilePicturePipe,
+  BaAppPiture
 } from "./pipes";       //管道
-
 
 
 const NGA_SERVICES = [  //服务
@@ -68,7 +68,8 @@ const NGA_DIRECTIVES = [  //指令
 
 
 const NGA_PIPES = [       //管道
-  BaProfilePicturePipe
+  BaProfilePicturePipe,
+  BaAppPiture
 ]
 
 @NgModule({

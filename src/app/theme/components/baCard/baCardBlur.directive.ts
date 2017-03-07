@@ -64,7 +64,7 @@ export class BaCardBlur{
 
   //
   private _isEnabled(){
-    console.log(this._baConfig.get().theme.name);  //ng2  返回false
+    //console.log(this._baConfig.get().theme.name);  //ng2  返回false
     return this._baConfig.get().theme.name == "blur";
   }
 

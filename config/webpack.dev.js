@@ -42,7 +42,7 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#devtool
      * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
      */
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-eval-source-map',  //开发工具查看
 
     /**
      * Options affecting the output of the compilation.

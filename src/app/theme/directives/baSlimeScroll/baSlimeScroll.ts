@@ -23,7 +23,7 @@ export class BaSlimScroll{
   }
 
   private _init():void{ //初始化滚动条
-    console.log(this.baSlimScrollOptions);
+    //console.log(this.baSlimScrollOptions);
     jQuery(this._elementRef.nativeElement).slimScroll(this.baSlimScrollOptions);// this.baSlimScrollOptions = {height: menuHeight}
   }
 
