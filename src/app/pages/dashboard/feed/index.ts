@@ -1,3 +1,2 @@
-/**
- * Created by zhou on 2017/3/7.
- */
+export * from "./feed.component";
+export * from "./feed.service";

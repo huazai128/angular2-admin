@@ -28,7 +28,9 @@ import {
   BaMsgCenter,
   BaContentTop,
   BaCard,
-  BaAmChart
+  BaAmChart,
+  BaChartistChart,
+  BaBackTop
 } from "./components"    //组件
 
 import{
@@ -58,7 +60,9 @@ const NGA_COMPONENT = [  //组件
   BaMsgCenter,
   BaContentTop,
   BaCard,
-  BaAmChart
+  BaAmChart,
+  BaChartistChart,
+  BaBackTop
 ];
 
 const NGA_DIRECTIVES = [  //指令

@@ -29,6 +29,7 @@ import { MENU } from "../app.menu";
               </ul>
             </div>
         </footer>
+        <ba-back-top position="200"></ba-back-top>
     `
 })
 

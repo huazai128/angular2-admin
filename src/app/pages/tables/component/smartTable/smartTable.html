@@ -1,0 +1,12 @@
+<script src="smartTable.server.ts"></script>
+<div class="widgets">
+  <div class="row">
+    <ba-card title="Basic Example" baCardBlur="with-scroll">
+      <ng2-smart-table [settings]="setting"
+                       [source]="source"
+                       (deleteConfirm)="onDeleteConfirm($event)"
+                       (editConfirm)="onEditConfirm($event)"
+                       (createConfirm)="onAdd($event)"></ng2-smart-table>
+    </ba-card>
+  </div>
+</div>

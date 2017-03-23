@@ -31,7 +31,6 @@ export class LoginComponent{
   public login():void{
     this.submitted = true;
     if(this.form.valid){
-
     }
   }
 }

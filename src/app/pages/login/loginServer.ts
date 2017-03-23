@@ -4,5 +4,5 @@ import { Http,Headers,Response } from "@angular/http";
 
 @Injectable()
 export class LoginServer{
-
+  constructor(){}
 }

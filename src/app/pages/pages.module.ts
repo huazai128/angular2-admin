@@ -9,8 +9,9 @@ import { NgaModule } from "../theme/nga.module";  //各个Module中的使用前�
 @NgModule({
   imports:[
     CommonModule,
-    routing,
-    NgaModule
+    NgaModule,
+    routing
+
   ],
   declarations:[
     PagesComponent

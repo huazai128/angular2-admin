@@ -4,7 +4,6 @@ import { TrafficChartSerivce } from "./trafficChart.service";
 
 import "style-loader!./trafficChart.scss";
 
-
 @Component({
   selector:"traffic-chart",
   templateUrl:"./trafficChart.html"

@@ -98,45 +98,13 @@ export const PAGES_MENU = [  //路由数据
         },
         children: [
           {
-            path: 'typography',
-            data: {
-              menu: {
-                title: 'Typography',
-              }
-            }
-          },
-          {
-            path: 'buttons',
-            data: {
-              menu: {
-                title: 'Buttons',
-              }
-            }
-          },
-          {
-            path: 'icons',
-            data: {
-              menu: {
-                title: 'Icons',
-              }
-            }
-          },
-          {
             path: 'modals',
             data: {
               menu: {
                 title: 'Modals',
               }
             }
-          },
-          {
-            path: 'grid',
-            data: {
-              menu: {
-                title: 'Grid',
-              }
-            }
-          },
+          }
         ]
       },
       {
@@ -190,7 +158,7 @@ export const PAGES_MENU = [  //路由数据
             }
           },
           {
-            path: 'smarttables',
+            path: 'smart',
             data: {
               menu: {
                 title: 'Smart Tables',

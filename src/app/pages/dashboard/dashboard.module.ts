@@ -10,7 +10,9 @@ import { PieChart,PieChartService } from "./pieChart";
 import { TrafficChart,TrafficChartSerivce} from "./trafficChart";
 import { UserMap,UserMapService } from "./userMap"
 import { LineChart,LineChartService } from "./lineChart";
-import { PopularApp } from "./popularApp"
+import { PopularApp } from "./popularApp";
+import { Feed,FeedService } from "./feed";
+
 
 
 @NgModule({
@@ -26,13 +28,15 @@ import { PopularApp } from "./popularApp"
     TrafficChart,
     UserMap,
     LineChart,
-    PopularApp
+    PopularApp,
+    Feed
   ],
   providers:[
     PieChartService,
     TrafficChartSerivce,
     UserMapService,
     LineChartService,
+    FeedService
   ]
 })
 

@@ -10,9 +10,12 @@ export const routes:Routes = [
     component:PagesComponent,
     children:[
       {path:"",redirectTo:"dashboard",pathMatch:"full"},
-      {path:"dashboard",loadChildren:"app/pages/dashboard/dashboard.module#DashboardModule"}
+      {path:"dashboard",loadChildren:"app/pages/dashboard/dashboard.module#DashboardModule"},
+      {path:"editors",loadChildren:"app/pages/editors/editors.module#EditorsModule"},
+      {path:"charts",loadChildren:"app/pages/charts/chart.module#ChartsModule"},
+      {path:"ui",loadChildren:"app/pages/ui/ui.module#UiModule"},
+      {path:"tables",loadChildren:"app/pages/tables/tables.module#TablesModule"}
     ]
-
   }
 ];
 

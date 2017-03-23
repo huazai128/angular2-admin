@@ -1,0 +1,64 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- 弹窗按钮 -->
+      <button class="btn btn-success" (click)="lgModal.show()">Large modal</button>
+      <button class="btn btn-warning" (click)="smModal.show()">Small modal</button>
+      <button class="btn btn-primary" (click)="staticModal.show()">Static modal</button>
+      <button class="btn btn-danger" (click)="showChildModal()">Open child modal</button>
+    </div>
+  </div>
+</div>
+
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" (click)="lgModal.hide()" aria-hidden="Close">
+          <span aria-hidden="true">x</span>
+        </button>
+        <h4 class="modal-title">Large modal</h4>
+      </div>
+
+      <!-- 可以使用 -->
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="init($event,lgModal)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" aria-lable="Close" (click)="smModal.hide()">
+          <span aria-hidden="true">x</span>
+        </button>
+        <h4>Small modal</h4>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary confirm-btn" (click)="init($event,smModal)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
